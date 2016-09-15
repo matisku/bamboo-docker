@@ -8,9 +8,6 @@ LABEL description="Based on hwuethrich/bamboo-server with added java 1.8 and som
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
-ENV http_proxy http://proxynexus:4YMkP5z6@172.29.5.40:9090
-ENV https_proxy http://proxynexus:4YMkP5z6@172.29.5.40:9090
-
 # Environment
 ENV BAMBOO_VERSION 5.13.0.1
 ENV BAMBOO_HOME /home/bamboo
