@@ -2,6 +2,9 @@
 
 Docker image to install [Atlassian Bamboo](https://www.atlassian.com/software/bamboo) based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) and [hwuethrich/docker-images](https://github.com/hwuethrich/docker-images/tree/master/bamboo-server)
 
+## Info
+This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). You can download [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/docker-compose.yml) and check out how it works!
+
 ## Usage
 
 It's as simple as:
@@ -18,22 +21,7 @@ By default, the ports `8085` (admin interface) and `54663` (agent server) are ma
 docker run -p 8085:8085 -p 54663:54663 matisq/bamboo-server
 ```
 
-If you want to use Bamboo remote agents, make sure to set the public port (and hostname) in the Bamboo settings (or directly in `/home/bamboo/bamboo.cfg.xml`).
-
-More info about port redirection can be found in the official Docker [documentation](https://docs.docker.com/reference/run/#expose-incoming-ports).
-
-### Persist `BAMBOO_HOME` on the docker host
-
-By default the Bamboo config and database is stored in the container in `/home/bamboo`. You may map a directory on the
-host to this directory to store the Bamboo config and database outside of the container.
-
-This is useful if you want to start containers using different versions of the image but
-with the same Bamboo database and license or if you want to backup this directory on the
-host. It also allows you to upgrade your Bamboo server without losing your data:
-
-```
-docker run -v /data/bamboo-server:/home/bamboo -d matisq/bamboo-server
-```
+I created a dedicated agent to be used with that server: [matisq/bamboo-agent](https://hub.docker.com/r/matisq/bamboo-agent/)
 
 ### Running a different Bamboo version
 
@@ -73,3 +61,6 @@ docker run --name=bamboo-server \
 
 ## Metadata
 [![](https://images.microbadger.com/badges/image/matisq/bamboo-server.svg)](http://microbadger.com/images/matisq/bamboo-server "Get your own image badge on microbadger.com")
+
+## Contributors
+Any forks are welcome!
