@@ -15,3 +15,6 @@ docker run -e AGENT_VERSION=5.13.0.1 -e BAMBOO_SERVER=192.168.0.12 -e BAMBOO_SER
 * `AGENT_VERSION` - This should match the version of Bamboo Server
 * `BAMBOO_SERVER` - URL or IP of Bamboo Server where agent should be attached
 * `BAMBOO_SERVER_PORT` - External port of Bamboo Server UI. In case of using docker-compose stack, this can be linked name.
+
+## Metadata
+[![](https://images.microbadger.com/badges/image/matisq/bamboo-agent.svg)](http://microbadger.com/images/matisq/bamboo-agent "Get your own image badge on microbadger.com")
