@@ -13,10 +13,10 @@ This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). Yo
 `bamboo-agent` - Bamboo Agent  
 
 ## Usage
-Place [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/docker-compose.yml) in your PWD and run:
-'''
+Place [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/docker-compose.yml) in your PWD and run:  
+```
 docker-compose up -d .
-'''
+```
 
 ## Variables
 
