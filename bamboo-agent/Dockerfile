@@ -10,7 +10,7 @@ CMD ["/sbin/my_init"]
 
 # Environment
 ENV HOME /root/
-ENV AGENT_INSTALL curl
+ENV PACKAGES curl
 
 # Expose web and agent ports
 ENV LANG en_US.UTF-8
