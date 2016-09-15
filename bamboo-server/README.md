@@ -1,7 +1,6 @@
 # Bamboo Server
 
-Docker image to install [Atlassian Bamboo](https://www.atlassian.com/software/bamboo) based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker)
-and [hwuethrich/docker-images](https://github.com/hwuethrich/docker-images/tree/master/bamboo-server)
+Docker image to install [Atlassian Bamboo](https://www.atlassian.com/software/bamboo) based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) and [hwuethrich/docker-images](https://github.com/hwuethrich/docker-images/tree/master/bamboo-server)
 
 ## Usage
 
