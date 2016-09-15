@@ -1,6 +1,6 @@
 # Bamboo Server
 
-Docker image to install [Atlassian Bamboo](https://www.atlassian.com/software/bamboo) based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) and [hwuethrich/docker-images](https://github.com/hwuethrich/docker-images/tree/master/bamboo-server)
+[matisq/bamboo-server](https://hub.docker.com/r/matisq/bamboo-agent/) is a docker image to install [Atlassian Bamboo](https://www.atlassian.com/software/bamboo) based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) and [hwuethrich/docker-images](https://github.com/hwuethrich/docker-images/tree/master/bamboo-server)
 
 ## Info
 This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). You can download [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/docker-compose.yml) and check out how it works!
