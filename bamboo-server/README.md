@@ -70,3 +70,6 @@ docker run --name=bamboo-server \
 
 * `8085` - Bamboo admin interface
 * `54663` - Bamboo agent server
+
+## Metadata
+[![](https://images.microbadger.com/badges/image/matisq/bamboo-server.svg)](http://microbadger.com/images/matisq/bamboo-server "Get your own image badge on microbadger.com")
