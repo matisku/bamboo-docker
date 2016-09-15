@@ -7,6 +7,8 @@ bamboo-server:
         - postgres:postgres
     environment:
         BAMBOO_VERSION: 5.13.0.1
+        BAMBOO_HOME: /home/bamboo
+        BAMBOO_BAMBOO_SERVER_ID: bamboo-server
     volumes_from:
         - bamboo-data
 
