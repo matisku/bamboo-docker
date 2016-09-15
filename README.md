@@ -18,6 +18,12 @@ Place [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/
 docker-compose up -d .
 ```
 
+## Bamboo Server
+Once stack will start, provide a license. If you are using `docker-compose.yml` from my repository, as a database hostname use `postgres` and for database user and password use `bamboo`.
+
+## Bamboo Agent
+Once stack will start, go to Bamboo Server Administration->Agents and disable remote agent authentication. This will add any new agent automatically to the Bamboo Server. If there is a need to have remote agent authentication enabled, enable each agent manually.
+
 ## Variables
 
 Bamboo Server:  
