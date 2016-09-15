@@ -1,7 +1,19 @@
 #!/bin/bash
 
-cd $HOME
+## Installing requested packages
+if [ -n ${PACKAGES} ]
+then
+  echo "Packages to install: "${PACKAGES}
+  apt-get -q update &&\
+  DEBIAN_FRONTEND="noninteractive" apt-get -q upgrade -y -o Dpkg::Options::="--force-confnew" --no-install-recommends &&\
+  DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends ${PACKAGES} &&\
+  apt-get -q autoremove &&\
+  apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin && rm -f /var/tmp/
+else
+  echo "Nothing to install."
+fi
 
+cd $HOME
 # Function used to validate if JAR File Exists
 function validate_url(){
   if [[ `wget -S --spider $1  2>&1 | grep 'HTTP/1.1 200 OK'` ]]
