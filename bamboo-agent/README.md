@@ -1,5 +1,5 @@
-# Bamboo Agnt
-Docker image to install [Atlassian Bamboo Agent](https://www.atlassian.com/software/bamboo) based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker)
+# Bamboo Agent
+[matisq/bamboo-agent](https://hub.docker.com/r/matisq/bamboo-agent/) is a docker image to use with an [Atlassian Bamboo Agent](https://www.atlassian.com/software/bamboo) based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker)
 
 ## Info
 This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). You can download [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/docker-compose.yml) and check out how it works!
