@@ -13,10 +13,23 @@ This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). Yo
 `bamboo-agent` - Bamboo Agent  
 
 ## Usage
-Place [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/docker-compose.yml) in your PWD and run:  
+
+```
+mkdir bamboo-stack
+```
+
+```
+cd bamboo-stack
+```
+
+```
+wget https://raw.githubusercontent.com/matisku/bamboo-docker/master/docker-compose.yml
+```
+
 ```
 docker-compose up -d .
 ```
+This will create a new docker stack called `bamboo-stack`
 
 ## Bamboo Server
 Once stack will start, provide a license. If you are using `docker-compose.yml` from my repository, as a database hostname use `postgres` and for database user and password use `bamboo`.
