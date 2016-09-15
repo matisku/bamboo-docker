@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Installing requested packages
-if [ ${PACKAGES} != "" ]
+if [ "${PACKAGES}" != "" ]
 then
   echo "Packages to install: "${PACKAGES}
   apt-get -q update &&\
