@@ -48,12 +48,13 @@ Database:
 * `PGDATA` - Database Storage Folder
 * `POSTGRES_DB` - Database Name
 * `POSTGRES_USER` - Database User
-* `POSTGRES_PASSWORD` - Database Passwoed
+* `POSTGRES_PASSWORD` - Database Password  
  
 Bamboo Agent:  
 * `AGENT_VERSION` - This should match the version of Bamboo Server
 * `BAMBOO_SERVER` - URL or IP of Bamboo Server where agent should be attached
 * `BAMBOO_SERVER_PORT` - External port of Bamboo Server UI. In case of using docker-compose stack, this can be linked name.
+* `PACKAGES` - space separated list of additional packages which should be installed on Bamboo Agent  
 
 ## Metadata
 * [matisq/bamboo-server](https://hub.docker.com/r/matisq/bamboo-server/) [![](https://images.microbadger.com/badges/image/matisq/bamboo-server.svg)](http://microbadger.com/images/matisq/bamboo-server "Get your own image badge on microbadger.com")  
