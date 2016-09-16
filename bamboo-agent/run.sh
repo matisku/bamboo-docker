@@ -40,7 +40,7 @@ then
   if [ ${CHECK_AGENT_JAR}=="true" ]
   then
     echo "Found Bamboo Agent at ${AGENT_JAR}"
-    wget ${AGENT_JAR}
+    wget -c ${AGENT_JAR}
     if [ $? == "0" ]
     then
       echo "Starting Bamboo Agent."
