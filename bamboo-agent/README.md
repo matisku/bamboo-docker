@@ -7,7 +7,7 @@ This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). Yo
 ## Usage
 Agent can connect to already running Bamboo Server:
 ```
-docker run -e AGENT_VERSION=5.13.0.1 -e BAMBOO_SERVER=192.168.0.12 -e BAMBOO_SERVER_PORT=8085 matisq/bamboo-agent
+docker run -e AGENT_VERSION=5.13.0.1 -e BAMBOO_SERVER=192.168.0.12 -e BAMBOO_SERVER_PORT=8085 -e PACKAGES="mc firefox" matisq/bamboo-agent
 ```
 
 ## Variables
