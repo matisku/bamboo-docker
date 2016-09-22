@@ -21,7 +21,7 @@ bamboo-data:
 postgres:
     image: postgres:latest
     ports:
-        - 5432:5432
+        - 15432:5432
     environment:
         PGDATA: /var/lib/postgresql/data/pgdata
         POSTGRES_DB: bamboo
