@@ -1,12 +1,18 @@
+---
+
 machine:
   services:
     - docker
 
 dependencies:
   override:
-    - docker build -t matisq/bamboo-server bamboo-server
+    - docker info
 
 test:
+  pre:
+    - docker-compose -f docker-compose-circleci.yml up -d
+    - docker ps
+    - docker-compose logs; sleep 3
+    - docker-compose logs; sleep 3
   override:
-    - docker run -d -p 8085:8085 matisq/bamboo-server; sleep 30
     - curl --retry 10 --retry-delay 5 -v http://localhost:8085
