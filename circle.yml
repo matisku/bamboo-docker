@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t matisq/bamboo-server ./bamboo-server/Dockerfile
+    - docker build -t matisq/bamboo-server bamboo-server
 
 test:
   override:
