@@ -16,4 +16,3 @@ test:
     - docker-compose logs; sleep 3
   override:
     - curl --retry 10 --retry-delay 5 -v http://localhost:8085
-    - curl --retry 10 --retry-delay 5 -v http://localhost:15432
