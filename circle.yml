@@ -4,9 +4,9 @@ machine:
 
 dependencies:
   override:
-    - docker info
     - docker build -t matisq/bamboo-server bamboo-server
 
 test:
   override:
-    - docker run matisq/bamboo-server
+    - docker run -p 8085:8085 matisq/bamboo-server; sleep 30
+    - curl --retry 10 --retry-delay 5 -v http://localhost:8085
