@@ -36,24 +36,27 @@ Once stack will start, provide a license. If you are using `docker-compose.yml` 
 ## Bamboo Agent
 Once stack will start, go to Bamboo Server Administration->Agents and disable remote agent authentication. This will add any new agent automatically to the Bamboo Server. If there is a need to have remote agent authentication enabled, enable each agent manually.
 
-## Variables
+## Environment
+###Bamboo Server:  
+`BAMBOO_HOME` - Bamboo home directory. Default: `/home/bamboo`  
+`BAMBOO_VERSION` - The version to install an run. Default: `5.13.0.1`  
+`BAMBOO_BAMBOO_SERVER_ID` - Used for agent authentication withing docker-compose. Default: `bamboo-server`  
 
-Bamboo Server:  
-* `BAMBOO_HOME` - Bamboo home directory (default `/home/bamboo`)
-* `BAMBOO_VERSION` - The version to install an run (default `5.13.0.1`)
-* `BAMBOO_BAMBOO_SERVER_ID` - Used for agent authentication withing docker-compose (default `bamboo-server`)
-
-Database:  
-* `PGDATA` - Database Storage Folder
-* `POSTGRES_DB` - Database Name
-* `POSTGRES_USER` - Database User
-* `POSTGRES_PASSWORD` - Database Password  
+###Database:  
+`PGDATA` - Database Storage Folder. Default: `/var/lib/postgresql/data/pgdata`  
+`POSTGRES_DB` - Database Name. Default: `bamboo`  
+`POSTGRES_USER` - Database User. Default: `bamboo`  
+`POSTGRES_PASSWORD` - Database Password. Default: `bamboo`  
  
-Bamboo Agent:  
-* `AGENT_VERSION` - This should match the version of Bamboo Server
-* `BAMBOO_SERVER` - URL or IP of Bamboo Server where agent should be attached
-* `BAMBOO_SERVER_PORT` - External port of Bamboo Server UI. In case of using docker-compose stack, this can be linked name.
-* `PACKAGES` - space separated list of additional packages which should be installed on Bamboo Agent  
+###Bamboo Agent:  
+`AGENT_VERSION` - This should match the version of Bamboo Server. Default: `5.13.0.1`  
+`BAMBOO_SERVER` - URL or IP of Bamboo Server where agent should be attached. Default: `bamboo-server`  
+`BAMBOO_SERVER_PORT` - External port of Bamboo Server UI. In case of using docker-compose stack, this can be linked name. Default: `8085`  
+`PACKAGES` - space separated list of additional packages which should be installed on Bamboo Agent. Default: `"mc htop"`  
+
+###Ports:
+Bamboo Server: `8085`, `54663`  
+Database: `5432`  
 
 ## Metadata
 * [![CircleCI](https://circleci.com/gh/matisku/bamboo-docker.svg?style=svg)](https://circleci.com/gh/matisku/bamboo-docker)  
