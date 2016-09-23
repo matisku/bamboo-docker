@@ -9,10 +9,8 @@ dependencies:
     - docker info
 
 test:
-  pre:
+  override:
     - docker-compose -f docker-compose-circleci.yml up -d
     - docker ps
     - docker-compose logs; sleep 3
     - docker-compose logs; sleep 3
-  override:
-    - curl --retry 10 --retry-delay 5 -v http://localhost:8085
