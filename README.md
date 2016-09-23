@@ -14,10 +14,10 @@ This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). Yo
 
 ## Usage
 ```bash
-mkdir bamboo-stack
-cd bamboo-stack
-wget https://raw.githubusercontent.com/matisku/bamboo-docker/master/docker-compose.yml
-docker-compose up -d .
+$ mkdir bamboo-stack
+$ cd bamboo-stack
+$ wget https://raw.githubusercontent.com/matisku/bamboo-docker/master/docker-compose.yml
+$ docker-compose up -d .
 ```
 This will create a new docker stack called `bamboo-stack`
 
