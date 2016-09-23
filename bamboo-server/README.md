@@ -9,16 +9,16 @@ This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). Yo
 
 It's as simple as:
 
-```
-docker run -d matisq/bamboo-server
+```bash
+$ docker run -d matisq/bamboo-server
 ```
 
 ### Customize exposed ports
 
 By default, the ports `8085` (admin interface) and `54663` (agent server) are mapped to random ports on the docker host. To customize, run:
 
-```
-docker run -p 8085:8085 -p 54663:54663 matisq/bamboo-server
+```bash
+$ docker run -p 8085:8085 -p 54663:54663 matisq/bamboo-server
 ```
 
 I created a dedicated agent to be used with that server: [matisq/bamboo-agent](https://hub.docker.com/r/matisq/bamboo-agent/)
@@ -27,15 +27,15 @@ I created a dedicated agent to be used with that server: [matisq/bamboo-agent](h
 
 By default, the container downloads and installs Bamboo v5.13.0.1 on the first boot. To specify which version to install, set the environment variable `BAMBOO_VERSION`:
 
-```
-docker run -e BAMBOO_VERSION=5.13.0.1 -d matisq/bamboo-server
+```bash 
+$ docker run -e BAMBOO_VERSION=5.13.0.1 -d matisq/bamboo-server
 ```
 
 ### Combined options
 
 The following example shows the options I use for our CI environment:
 
-```
+```bash 
 docker run --name=bamboo-server \
    JAVA_OPTS=-Xmx1024m -e BAMBOO_VERSION=5.13.0.1 \
    -e BAMBOO_BAMBOO_SERVER_ID=myhost.local \
