@@ -13,20 +13,19 @@ This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). Yo
 `bamboo-agent` - Bamboo Agent  
 
 ## Usage
-
-```
+```bash
 mkdir bamboo-stack
 ```
 
-```
+```bash
 cd bamboo-stack
 ```
 
-```
+```bash
 wget https://raw.githubusercontent.com/matisku/bamboo-docker/master/docker-compose.yml
 ```
 
-```
+```bash
 docker-compose up -d .
 ```
 This will create a new docker stack called `bamboo-stack`
