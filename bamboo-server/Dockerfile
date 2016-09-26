@@ -9,7 +9,7 @@ LABEL description="Based on hwuethrich/bamboo-server with added java 1.8 and som
 CMD ["/sbin/my_init"]
 
 # Environment
-ENV BAMBOO_VERSION 5.13.0.1
+ENV BAMBOO_VERSION 5.13.1
 ENV BAMBOO_HOME /home/bamboo
 ENV BAMBOO_SERVER_ID bamboo-server
 
