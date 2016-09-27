@@ -50,7 +50,7 @@ Bamboo Server: `8085`, `54663`
 Database: `5432`  
 
 ## Metadata
-* [![CircleCI](https://circleci.com/gh/matisku/bamboo-docker.svg?style=svg)](https://circleci.com/gh/matisku/bamboo-docker)  
+* [![CircleCI](https://circleci.com/gh/matisku/bamboo-docker.svg?style=svg)](https://circleci.com/gh/matisku/bamboo-docker)  [![Build Status](https://travis-ci.org/matisku/bamboo-docker.svg?branch=master)](https://travis-ci.org/matisku/bamboo-docker) 
 * [matisq/bamboo-server](https://hub.docker.com/r/matisq/bamboo-server/) [![](https://images.microbadger.com/badges/image/matisq/bamboo-server.svg)](http://microbadger.com/images/matisq/bamboo-server "Get your own image badge on microbadger.com")  
 * [matisq/bamboo-agent](https://hub.docker.com/r/matisq/bamboo-agent/) [![](https://images.microbadger.com/badges/image/matisq/bamboo-agent.svg)](http://microbadger.com/images/matisq/bamboo-agent "Get your own image badge on microbadger.com")
 
