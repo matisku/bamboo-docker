@@ -1,4 +1,3 @@
-
 sudo: required
 
 services:
@@ -6,11 +5,9 @@ services:
 
 before_install:
   - docker-compose -f docker-compose-circleci.yml up -d
-  - docker-compose logs; sleep 10
-  - docker-compose logs; sleep 10
-  - docker-compose logs; sleep 10
+  - sleep 15
+  - docker-compose logs
 
 script:
   - docker ps
-  - curl --retry 10 --retry-delay 5 -v http://localhost:8085
   - wget http://localhost:8085 -O bamboo.html
