@@ -5,6 +5,8 @@
 ## Info
 This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). You can download [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/docker-compose.yml) and check out how it works!
 
+**Bamboo Stack** is also available in my custom [rancher-stack](https://github.com/matisku/rancher-catalog), so with just a few clicks you can use, scale and upgrade it!
+
 ## Usage
 
 It's as simple as:
