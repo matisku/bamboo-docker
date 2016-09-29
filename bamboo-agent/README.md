@@ -1,6 +1,9 @@
 # Bamboo Agent
 [matisq/bamboo-agent](https://hub.docker.com/r/matisq/bamboo-agent/) is a docker image to use with an [Atlassian Bamboo Agent](https://www.atlassian.com/software/bamboo) based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker)
 
+## Documentation
+[Here](https://github.com/matisku/bamboo-docker/blob/master/doc/README.md) you can find info how to setup [Bamboo on Rancher](https://github.com/matisku/bamboo-docker/blob/master/doc/README.md).
+
 ## Info
 This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). You can download [docker-compose.yml](https://github.com/matisku/bamboo-docker/blob/master/docker-compose.yml) and check out how it works!
 
