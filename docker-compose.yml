@@ -4,7 +4,7 @@ bamboo-server:
         - 8085:8085
         - 54663:54663
     links:
-        - postgres:postgres
+        - postgres
     environment:
         BAMBOO_VERSION: 5.13.1
         BAMBOO_HOME: /home/bamboo
@@ -41,7 +41,7 @@ postgres-data:
 bamboo-agent:
     image: matisq/bamboo-agent
     links:
-        - bamboo-server:bamboo-server
+        - bamboo-server
     environment:
         BAMBOO_VERSION: 5.13.0.1
         BAMBOO_SERVER: bamboo-server
