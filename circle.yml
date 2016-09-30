@@ -14,8 +14,7 @@ test:
     - docker ps
     - docker-compose logs; sleep 3
   override:
-   - curl --retry 10 --retry-delay 5 -v http://localhost:8085
+    - wget --tries=20 --waitretry=1 --read-timeout=20 --timeout=15 http://localhost:8085 -O bamboo.html
   post:
-    - wget http://localhost:8085 -O bamboo.html
     - mv *.html $CIRCLE_ARTIFACTS
     - sudo killall --wait docker
