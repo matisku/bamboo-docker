@@ -35,7 +35,7 @@ Once stack will start, go to Bamboo Server Administration->Agents and disable re
 ## Environment
 ###Bamboo Server:  
 `BAMBOO_HOME` - Bamboo home directory. Default: `/home/bamboo`  
-`BAMBOO_VERSION` - The version to install an run. Default: `5.13.0.1`  
+`BAMBOO_VERSION` - The version to install an run. Default: `5.13.1`  
 `BAMBOO_BAMBOO_SERVER_ID` - Used for agent authentication withing docker-compose. Default: `bamboo-server`  
 
 ###Database:  
