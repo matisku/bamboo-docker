@@ -43,7 +43,7 @@ bamboo-agent:
     links:
         - bamboo-server
     environment:
-        BAMBOO_VERSION: 5.13.0.1
+        BAMBOO_VERSION: 5.13.1
         BAMBOO_SERVER: bamboo-server
         BAMBOO_SERVER_PORT: 8085
         PACKAGES: "mc htop"
