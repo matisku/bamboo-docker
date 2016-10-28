@@ -5,7 +5,7 @@ services:
 
 before_install:
   - docker-compose -f docker-compose-circleci.yml up -d
-  - sleep 15
+  - sleep 120
   - docker-compose logs
 
 script:
