@@ -35,7 +35,7 @@ Once stack will start, go to Bamboo Server Administration->Agents and disable re
 ## Environment
 ###Bamboo Server:  
 `BAMBOO_HOME` - Bamboo home directory. Default: `/home/bamboo`  
-`BAMBOO_VERSION` - The version to install an run. Default: `5.13.1`  
+`BAMBOO_VERSION` - The version to install an run. Default: `5.14.0.1`  
 `BAMBOO_BAMBOO_SERVER_ID` - Used for agent authentication withing docker-compose. Default: `bamboo-server`  
 
 ###Database:  
@@ -45,7 +45,7 @@ Once stack will start, go to Bamboo Server Administration->Agents and disable re
 `POSTGRES_PASSWORD` - Database Password. Default: `bamboo`  
  
 ###Bamboo Agent:  
-`AGENT_VERSION` - This should match the version of Bamboo Server. Default: `5.13.1`  
+`AGENT_VERSION` - This should match the version of Bamboo Server. Default: `5.14.0.1`  
 `BAMBOO_SERVER` - URL or IP of Bamboo Server where agent should be attached. Default: `bamboo-server`  
 `BAMBOO_SERVER_PORT` - External port of Bamboo Server UI. In case of using docker-compose stack, this can be linked name. Default: `8085`  
 `PACKAGES` - space separated list of additional packages which should be installed on Bamboo Agent. Default: `"mc htop"`  
