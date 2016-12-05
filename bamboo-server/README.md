@@ -30,10 +30,10 @@ I created a dedicated agent to be used with that server: [matisq/bamboo-agent](h
 
 ### Running a different Bamboo version
 
-By default, the container downloads and installs Bamboo v5.13.0.1 on the first boot. To specify which version to install, set the environment variable `BAMBOO_VERSION`:
+By default, the container downloads and installs Bamboo v5.14.1 on the first boot. To specify which version to install, set the environment variable `BAMBOO_VERSION`:
 
 ```bash 
-$ docker run -e BAMBOO_VERSION=5.13.0.1 -d matisq/bamboo-server
+$ docker run -e BAMBOO_VERSION=5.14.1 -d matisq/bamboo-server
 ```
 
 ### Combined options
@@ -42,7 +42,7 @@ The following example shows the options I use for our CI environment:
 
 ```bash 
 docker run --name=bamboo-server \
-   JAVA_OPTS=-Xmx1024m -e BAMBOO_VERSION=5.13.0.1 \
+   JAVA_OPTS=-Xmx1024m -e BAMBOO_VERSION=5.14.1 \
    -e BAMBOO_BAMBOO_SERVER_ID=myhost.local \
   -v /opt/bamboo-server:/home/bamboo -p 8085:8085 -p 54663:54663 \
   -d matisq/bamboo-server
@@ -56,7 +56,7 @@ docker run --name=bamboo-server \
 ## Variables
 
 * `BAMBOO_HOME` - Bamboo home directory (default `/home/bamboo`)
-* `BAMBOO_VERSION` - The version to install an run (default `5.13.0.1`)
+* `BAMBOO_VERSION` - The version to install an run (default `5.14.1`)
 * `BAMBOO_BAMBOO_SERVER_ID` - Used for agent authentication withing docker-compose (default `bamboo-server`)
 
 ## Exposed ports

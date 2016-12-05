@@ -35,7 +35,7 @@ Once stack will start, go to Bamboo Server Administration->Agents and disable re
 ## Environment
 ###Bamboo Server:  
 `BAMBOO_HOME` - Bamboo home directory. Default: `/home/bamboo`  
-`BAMBOO_VERSION` - The version to install an run. Default: `5.13.1`  
+`BAMBOO_VERSION` - The version to install an run. Default: `5.14.1`  
 `BAMBOO_BAMBOO_SERVER_ID` - Used for agent authentication withing docker-compose. Default: `bamboo-server`  
 
 ###Database:  
@@ -45,7 +45,7 @@ Once stack will start, go to Bamboo Server Administration->Agents and disable re
 `POSTGRES_PASSWORD` - Database Password. Default: `bamboo`  
  
 ###Bamboo Agent:  
-`AGENT_VERSION` - This should match the version of Bamboo Server. Default: `5.13.1`  
+`AGENT_VERSION` - This should match the version of Bamboo Server. Default: `5.14.1`  
 `BAMBOO_SERVER` - URL or IP of Bamboo Server where agent should be attached. Default: `bamboo-server`  
 `BAMBOO_SERVER_PORT` - External port of Bamboo Server UI. In case of using docker-compose stack, this can be linked name. Default: `8085`  
 `PACKAGES` - space separated list of additional packages which should be installed on Bamboo Agent. Default: `"mc htop"`  
@@ -55,7 +55,7 @@ Bamboo Server: `8085`, `54663`
 Database: `5432`  
 
 ## Metadata
-* [![CircleCI](https://circleci.com/gh/matisku/bamboo-docker.svg?style=svg)](https://circleci.com/gh/matisku/bamboo-docker)  [![Build Status](https://travis-ci.org/matisku/bamboo-docker.svg?branch=master)](https://travis-ci.org/matisku/bamboo-docker) 
+* [![Build Status](https://travis-ci.org/matisku/bamboo-docker.svg?branch=master)](https://travis-ci.org/matisku/bamboo-docker) 
 * [matisq/bamboo-server](https://hub.docker.com/r/matisq/bamboo-server/) [![](https://images.microbadger.com/badges/image/matisq/bamboo-server.svg)](http://microbadger.com/images/matisq/bamboo-server "Get your own image badge on microbadger.com")  
 * [matisq/bamboo-agent](https://hub.docker.com/r/matisq/bamboo-agent/) [![](https://images.microbadger.com/badges/image/matisq/bamboo-agent.svg)](http://microbadger.com/images/matisq/bamboo-agent "Get your own image badge on microbadger.com")
 
