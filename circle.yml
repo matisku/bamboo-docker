@@ -1,5 +1,4 @@
 ---
-
 machine:
   services:
     - docker
@@ -10,7 +9,7 @@ dependencies:
 
 test:
   pre:
-    - docker-compose -f docker-compose-circleci.yml up -d
+    - sudo docker-compose -f docker-compose-circleci.yml up -d
     - docker ps
     - docker-compose logs; sleep 3
   override:
