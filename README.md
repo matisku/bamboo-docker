@@ -59,5 +59,8 @@ Database: `5432`
 * [matisq/bamboo-server](https://hub.docker.com/r/matisq/bamboo-server/) [![](https://images.microbadger.com/badges/image/matisq/bamboo-server.svg)](http://microbadger.com/images/matisq/bamboo-server "Get your own image badge on microbadger.com")  
 * [matisq/bamboo-agent](https://hub.docker.com/r/matisq/bamboo-agent/) [![](https://images.microbadger.com/badges/image/matisq/bamboo-agent.svg)](http://microbadger.com/images/matisq/bamboo-agent "Get your own image badge on microbadger.com")
 
+## License
+Copyright © 2016 Mateusz Trojak. See LICENSE for details.
+
 ## Contributors
 Any forks are welcome!
