@@ -45,6 +45,12 @@ then
     then
       echo "Starting Bamboo Agent."
       java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/
+      if [ $? != 0 ]
+      then
+        echo "JAR File corrupted. Downloading again..."
+        rm -fv atlassian-bamboo-agent-installer*.jar
+        wget -c ${AGENT_JAR}
+        java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/
     else
       echo "Problem with downloading data from ${BAMBOO_SERVER}"
       echo "Could not find ${AGENT_JAR}"
