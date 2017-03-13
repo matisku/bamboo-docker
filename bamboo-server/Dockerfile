@@ -2,14 +2,14 @@
 
 FROM phusion/baseimage:latest
 MAINTAINER Mateusz Trojak "matisq@op.pl"
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL description="Based on hwuethrich/bamboo-server with added java 1.8 and some refactoring"
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
 # Environment
-ENV BAMBOO_VERSION 5.14.1
+ENV BAMBOO_VERSION 5.15.3
 ENV BAMBOO_HOME /home/bamboo
 ENV BAMBOO_SERVER_ID bamboo-server
 
@@ -32,8 +32,6 @@ RUN locale-gen en_US.UTF-8 &&\
     apt-get -q update &&\
     DEBIAN_FRONTEND="noninteractive" apt-get -q upgrade -y -o Dpkg::Options::="--force-confnew" --no-install-recommends &&\
     DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends openjdk-8-jdk &&\
-    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y subversion --no-install-recommends &&\
-    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y git --no-install-recommends &&\
-    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y wget --no-install-recommends &&\
+    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y subversion git wget --no-install-recommends &&\
     apt-get -q autoremove &&\
     apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin && rm -f /var/tmp/*
