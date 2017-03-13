@@ -13,7 +13,7 @@ This is a part of a [Bamboo Stack](https://github.com/matisku/bamboo-docker). Yo
 Agent can connect to already running Bamboo Server:
 ```
 docker run \
-  -e AGENT_VERSION=5.14.1 \
+  -e AGENT_VERSION=5.15.3 \
   -e BAMBOO_SERVER=192.168.0.12 \
   -e BAMBOO_SERVER_PORT=8085 \
   -e PACKAGES="mc firefox" \
