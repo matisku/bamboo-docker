@@ -17,7 +17,7 @@ cd $HOME
 # Function used to validate if JAR File Exists
 function validate_url(){
   if [[ `wget -S --spider $1  2>&1 | grep 'HTTP/1.1 200 OK'` ]]
-  then 
+  then
     echo "true"
   fi
 }
@@ -30,6 +30,15 @@ then
   echo "AGENT_VERSION: "${AGENT_VERSION}
   echo "BAMBOO_SERVER: "${BAMBOO_SERVER}
   echo "BAMBOO_SERVER_PORT: "${BAMBOO_SERVER_PORT}
+  echo "BAMBOO_SECURITY_TOKEN: "${BAMBOO_SECURITY_TOKEN}
+  # Connection Strings
+  if [ -z "${BAMBOO_SECURITY_TOKEN}" ]
+  then
+    CONNECTION_STRING="http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/"
+  else
+    CONNECTION_STRING="http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/ -t ${BAMBOO_SECURITY_TOKEN}"
+  fi
+  echo "CONNECTION_STRING: "${CONNECTION_STRING}
   AGENT_JAR="http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/agentInstaller/atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar"
   CHECK_AGENT_JAR=`validate_url $AGENT_JAR`
   echo "AGENT_JAR: "${AGENT_JAR}
@@ -44,13 +53,13 @@ then
     if [ $? == "0" ]
     then
       echo "Starting Bamboo Agent."
-      java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/
+      java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar ${CONNECTION_STRING}
       if [ $? != 0 ]
       then
         echo "JAR File corrupted. Downloading again..."
         rm -fv atlassian-bamboo-agent-installer*.jar
         wget -c ${AGENT_JAR}
-        java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/
+        java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar ${CONNECTION_STRING}
       fi
     else
       echo "Problem with downloading data from ${BAMBOO_SERVER}"
@@ -69,5 +78,6 @@ else
   echo "AGENT_VERSION: "${AGENT_VERSION}
   echo "BAMBOO_SERVER: "${BAMBOO_SERVER}
   echo "BAMBOO_SERVER_PORT: "${BAMBOO_SERVER_PORT}
+  echo "BAMBOO_SECURITY_TOKEN: "${BAMBOO_SECURITY_TOKEN}
   echo "Exiting."
 fi
