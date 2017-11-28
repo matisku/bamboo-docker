@@ -17,7 +17,7 @@ cd $HOME
 # Function used to validate if JAR File Exists
 function validate_url(){
   if [[ `wget -S --spider $1  2>&1 | grep 'HTTP/1.1 200 OK'` ]]
-  then
+  then 
     echo "true"
   fi
 }
@@ -31,8 +31,9 @@ then
   echo "BAMBOO_SERVER: "${BAMBOO_SERVER}
   echo "BAMBOO_SERVER_PORT: "${BAMBOO_SERVER_PORT}
   echo "BAMBOO_SECURITY_TOKEN: "${BAMBOO_SECURITY_TOKEN}
+  echo "BAMBOO_CAPABILITIES: " ${BAMBOO_CAPABILITIES}
   if [ -z "${BAMBOO_SECURITY_TOKEN}" ]
-  then
+  then 
     CONNECTION_STRING="http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/"
   else
     CONNECTION_STRING="http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/ -t ${BAMBOO_SECURITY_TOKEN}"
@@ -50,7 +51,13 @@ then
     echo "Found Bamboo Agent at ${AGENT_JAR}"
     wget -c ${AGENT_JAR}
     if [ $? == "0" ]
-    then
+    then 
+      if [ ! -z "${BAMBOO_CAPABILITIES}" ]
+      then
+        echo "bamboo-capabilities.properties will be created"
+        mkdir -p /root/bamboo-agent-home/bin
+        echo "${BAMBOO_CAPABILITIES}" > /root/bamboo-agent-home/bin/bamboo-capabilities.properties
+      fi
       echo "Starting Bamboo Agent."
       java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar ${CONNECTION_STRING}
       if [ $? != 0 ]
