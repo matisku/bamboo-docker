@@ -60,7 +60,7 @@ Database: `5432`
 * [matisq/bamboo-agent](https://hub.docker.com/r/matisq/bamboo-agent/) [![](https://images.microbadger.com/badges/image/matisq/bamboo-agent.svg)](http://microbadger.com/images/matisq/bamboo-agent "Get your own image badge on microbadger.com")
 
 ## License
-Copyright © 2017 Mateusz Trojak. See LICENSE for details.
+Copyright © 2016-2018 Mateusz Trojak. See LICENSE for details.
 
 ## Contributors
 Any forks are welcome!
