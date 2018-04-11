@@ -13,11 +13,20 @@ else
   echo "Nothing to install."
 fi
 
-cd $HOME
+if [ -z "${BAMBOO_HOME}" ]
+then
+  cd $HOME
+  BAMBOO_HOME=$HOME
+else
+  mkdir -p ${BAMBOO_HOME}
+  cd ${BAMBOO_HOME}
+fi
+echo "BAMBOO_HOME: "${BAMBOO_HOME}
+
 # Function used to validate if JAR File Exists
 function validate_url(){
   if [[ `wget -S --spider $1  2>&1 | grep 'HTTP/1.1 200 OK'` ]]
-  then 
+  then
     echo "true"
   fi
 }
@@ -33,7 +42,7 @@ then
   echo "BAMBOO_SECURITY_TOKEN: "${BAMBOO_SECURITY_TOKEN}
   echo "BAMBOO_CAPABILITIES: " ${BAMBOO_CAPABILITIES}
   if [ -z "${BAMBOO_SECURITY_TOKEN}" ]
-  then 
+  then
     CONNECTION_STRING="http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/"
   else
     CONNECTION_STRING="http://${BAMBOO_SERVER}:${BAMBOO_SERVER_PORT}/agentServer/ -t ${BAMBOO_SECURITY_TOKEN}"
@@ -51,21 +60,21 @@ then
     echo "Found Bamboo Agent at ${AGENT_JAR}"
     wget -c ${AGENT_JAR}
     if [ $? == "0" ]
-    then 
+    then
       if [ ! -z "${BAMBOO_CAPABILITIES}" ]
       then
         echo "bamboo-capabilities.properties will be created"
-        mkdir -p /root/bamboo-agent-home/bin
-        echo "${BAMBOO_CAPABILITIES}" > /root/bamboo-agent-home/bin/bamboo-capabilities.properties
+        mkdir -p ${BAMBOO_HOME}/bin
+        echo "${BAMBOO_CAPABILITIES}" > ${BAMBOO_HOME}/bin/bamboo-capabilities.properties
       fi
       echo "Starting Bamboo Agent."
-      java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar ${CONNECTION_STRING}
+      java -Dbamboo.home=${BAMBOO_HOME} -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar ${CONNECTION_STRING}
       if [ $? != 0 ]
       then
         echo "JAR File corrupted. Downloading again..."
         rm -fv atlassian-bamboo-agent-installer*.jar
         wget -c ${AGENT_JAR}
-        java -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar ${CONNECTION_STRING}
+        java -Dbamboo.home=${BAMBOO_HOME} -jar atlassian-bamboo-agent-installer-${AGENT_VERSION}.jar ${CONNECTION_STRING}
       fi
     else
       echo "Problem with downloading data from ${BAMBOO_SERVER}"
@@ -87,3 +96,4 @@ else
   echo "BAMBOO_SECURITY_TOKEN: "${BAMBOO_SECURITY_TOKEN}
   echo "Exiting."
 fi
+
